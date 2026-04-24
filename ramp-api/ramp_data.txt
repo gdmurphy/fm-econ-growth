@@ -1,0 +1,2021 @@
+
+============================================================
+  GET /ramp-rate/categories
+============================================================
+{
+  "categories": [
+    {
+      "software_category": "401k/Benefits"
+    },
+    {
+      "software_category": "Accounting"
+    },
+    {
+      "software_category": "Ad Creation"
+    },
+    {
+      "software_category": "AEO"
+    },
+    {
+      "software_category": "Agent Hosting and Serving"
+    },
+    {
+      "software_category": "AI Assistants (Agentic Productivity)"
+    },
+    {
+      "software_category": "AI Customer Support Bots"
+    },
+    {
+      "software_category": "AI Dev Tools"
+    },
+    {
+      "software_category": "AI-First GTM"
+    },
+    {
+      "software_category": "AI Legal Assistance"
+    },
+    {
+      "software_category": "AI Support Bots"
+    },
+    {
+      "software_category": "AI Video"
+    },
+    {
+      "software_category": "AP Automation"
+    },
+    {
+      "software_category": "App Builder"
+    },
+    {
+      "software_category": "ATS/Recruiting"
+    },
+    {
+      "software_category": "Blockchain Development"
+    },
+    {
+      "software_category": "Business Intelligence"
+    },
+    {
+      "software_category": "Call Tracking"
+    },
+    {
+      "software_category": "Clearing House"
+    },
+    {
+      "software_category": "Climate Technology"
+    },
+    {
+      "software_category": "Cloud Cost Management"
+    },
+    {
+      "software_category": "Cloud Storage"
+    },
+    {
+      "software_category": "Communication"
+    },
+    {
+      "software_category": "Construction"
+    },
+    {
+      "software_category": "Construction Robotics"
+    },
+    {
+      "software_category": "Consumer Hardware"
+    },
+    {
+      "software_category": "Content Creation"
+    },
+    {
+      "software_category": "Creative Suite"
+    },
+    {
+      "software_category": "CRM"
+    },
+    {
+      "software_category": "Customer Support"
+    },
+    {
+      "software_category": "Database"
+    },
+    {
+      "software_category": "Data Orchestration"
+    },
+    {
+      "software_category": "Data Warehouses"
+    },
+    {
+      "software_category": "Deal Sourcing"
+    },
+    {
+      "software_category": "DevOps"
+    },
+    {
+      "software_category": "Domain Registrar"
+    },
+    {
+      "software_category": "Due Diligence"
+    },
+    {
+      "software_category": "Education/Training"
+    },
+    {
+      "software_category": "Email Marketing"
+    },
+    {
+      "software_category": "Employee Recognition"
+    },
+    {
+      "software_category": "Equity Management"
+    },
+    {
+      "software_category": "ERP/Accounting"
+    },
+    {
+      "software_category": "e-Signatures"
+    },
+    {
+      "software_category": "Event Management"
+    },
+    {
+      "software_category": "Feature Management"
+    },
+    {
+      "software_category": "File Transfer"
+    },
+    {
+      "software_category": "Financial API"
+    },
+    {
+      "software_category": "Fintech"
+    },
+    {
+      "software_category": "Form Builder"
+    },
+    {
+      "software_category": "generative AI"
+    },
+    {
+      "software_category": "Healthcare Tech"
+    },
+    {
+      "software_category": "Healthcare Technology"
+    },
+    {
+      "software_category": "HR"
+    },
+    {
+      "software_category": "HR Management"
+    },
+    {
+      "software_category": "Identity Providers"
+    },
+    {
+      "software_category": "Integration"
+    },
+    {
+      "software_category": "IT Management"
+    },
+    {
+      "software_category": "IT Security"
+    },
+    {
+      "software_category": "Link Management"
+    },
+    {
+      "software_category": "Logistics Technology"
+    },
+    {
+      "software_category": "Low-Code Platform"
+    },
+    {
+      "software_category": "Marketing Measurement"
+    },
+    {
+      "software_category": "Messaging Infrastructure"
+    },
+    {
+      "software_category": "Observability"
+    },
+    {
+      "software_category": "Online Course Platform"
+    },
+    {
+      "software_category": "Package Manager"
+    },
+    {
+      "software_category": "Paid Ads"
+    },
+    {
+      "software_category": "Password Managers"
+    },
+    {
+      "software_category": "People Platform"
+    },
+    {
+      "software_category": "Presentations"
+    },
+    {
+      "software_category": "Privacy/Compliance"
+    },
+    {
+      "software_category": "product analytics / CDP / event infrastructure"
+    },
+    {
+      "software_category": "Project Management"
+    },
+    {
+      "software_category": "Property Management"
+    },
+    {
+      "software_category": "Recruiting AI"
+    },
+    {
+      "software_category": "Remote Access"
+    },
+    {
+      "software_category": "Retail Operations"
+    },
+    {
+      "software_category": "Sales Data Providers"
+    },
+    {
+      "software_category": "Sales Execution & Orchestration"
+    },
+    {
+      "software_category": "Scheduling"
+    },
+    {
+      "software_category": "Search API"
+    },
+    {
+      "software_category": "SEO"
+    },
+    {
+      "software_category": "SMS Marketing"
+    },
+    {
+      "software_category": "Social Media Management"
+    },
+    {
+      "software_category": "Software Design"
+    },
+    {
+      "software_category": "Staffing Software"
+    },
+    {
+      "software_category": "Tax Automation"
+    },
+    {
+      "software_category": "Tax Software"
+    },
+    {
+      "software_category": "Time Tracking"
+    },
+    {
+      "software_category": "Travel Management"
+    },
+    {
+      "software_category": "Unknown"
+    },
+    {
+      "software_category": "Vector Databases"
+    },
+    {
+      "software_category": "Video Messaging"
+    },
+    {
+      "software_category": "Voice & Audio AI"
+    },
+    {
+      "software_category": "VPN"
+    },
+    {
+      "software_category": "Web Development"
+    },
+    {
+      "software_category": "Web Hosting & Site Builders"
+    }
+  ]
+}
+
+>>> Using first category: 401k/Benefits
+
+============================================================
+  GET /ramp-rate/categories/generative AI/summary
+============================================================
+{
+  "software_category": "generative AI",
+  "category_adoption_rate": 0.8093,
+  "category_adoption_rank": 1,
+  "category_adoption_rate_yoy_change": 0.1936,
+  "category_rank_mom_change": 0,
+  "category_adoption_rate_mom_change": 0.0223,
+  "category_adoption_growth_rank": 1,
+  "category_adoption_rate_r3m_change": 0.0157,
+  "category_adoption_growth_rank_r3m": 1,
+  "vendor_count": 14,
+  "dominant_fte_segment": "Mid-Market",
+  "dominant_fte_pct": 0.4365,
+  "secondary_fte_segment": "Enterprise",
+  "secondary_fte_pct": 0.3007,
+  "fte_segment_share_smb": 0.7867,
+  "fte_segment_share_mm": 0.1962,
+  "fte_segment_share_ent": 0.0171
+}
+
+============================================================
+  GET /ramp-rate/categories/generative AI/vendors
+============================================================
+{
+  "software_category": "generative AI",
+  "fte_segment": null,
+  "vendors": [
+    {
+      "vendor_slug": "openai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.810419,
+      "adoption_rate_micro": 0.75958,
+      "adoption_rate_smb": 0.796854,
+      "adoption_rate_mm": 0.867325,
+      "adoption_rate_ent": 0.862528,
+      "adoption_rate_yoy_change": -0.076861,
+      "global_adoption_rate": 0.554423,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.038547,
+      "share_of_category_spend": 0.3443816137551295,
+      "new_adopter_share": 0.327844,
+      "competitor_switch_rate": 0.186818,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.43,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.3,
+      "fte_segment_share_smb": 0.79,
+      "fte_segment_share_mm": 0.19,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 3,
+      "adoption_rank__micro": 1,
+      "adoption_growth_rank_r3m__micro": 13,
+      "customer_growth_rank_mom__micro": 11,
+      "new_adopter_rank__micro": 2,
+      "competitor_switch_rank__micro": 2,
+      "spend_share_rank__micro": 2
+    },
+    {
+      "vendor_slug": "openai.com",
+      "software_category": "generative AI",
+      "adoption_rate": 0.8024,
+      "adoption_rate_micro": 0.75,
+      "adoption_rate_smb": 0.79,
+      "adoption_rate_mm": 0.86,
+      "adoption_rate_ent": 0.88,
+      "adoption_rate_yoy_change": -0.07,
+      "global_adoption_rate": 0.4995,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0365,
+      "share_of_category_spend": 0.05428093743465274,
+      "new_adopter_share": 0.32,
+      "competitor_switch_rate": 0.2,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.43,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.3,
+      "fte_segment_share_smb": 0.8,
+      "fte_segment_share_mm": 0.19,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 5,
+      "adoption_rank__micro": 1,
+      "adoption_growth_rank_r3m__micro": 15,
+      "customer_growth_rank_mom__micro": 12,
+      "new_adopter_rank__micro": 2,
+      "competitor_switch_rank__micro": 2,
+      "spend_share_rank__micro": 4
+    },
+    {
+      "vendor_slug": "adobe-firefly",
+      "software_category": "generative AI",
+      "adoption_rate": 0.6841,
+      "adoption_rate_micro": 0.6,
+      "adoption_rate_smb": 0.67,
+      "adoption_rate_mm": 0.77,
+      "adoption_rate_ent": 0.75,
+      "adoption_rate_yoy_change": -0.06,
+      "global_adoption_rate": 0.4867,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0155,
+      "share_of_category_spend": 0.01808281095021123,
+      "new_adopter_share": 0.32,
+      "competitor_switch_rate": 0.23,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.44,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.29,
+      "fte_segment_share_smb": 0.79,
+      "fte_segment_share_mm": 0.19,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 55,
+      "adoption_rank__micro": 1,
+      "adoption_growth_rank_r3m__micro": 20,
+      "customer_growth_rank_mom__micro": 17,
+      "new_adopter_rank__micro": 2,
+      "competitor_switch_rank__micro": 2,
+      "spend_share_rank__micro": 6
+    },
+    {
+      "vendor_slug": "anthropic",
+      "software_category": "generative AI",
+      "adoption_rate": 0.632283,
+      "adoption_rate_micro": 0.641119,
+      "adoption_rate_smb": 0.628933,
+      "adoption_rate_mm": 0.645942,
+      "adoption_rate_ent": 0.649667,
+      "adoption_rate_yoy_change": 0.392883,
+      "global_adoption_rate": 0.432557,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.096277,
+      "share_of_category_spend": 0.3886796258241739,
+      "new_adopter_share": 0.692838,
+      "competitor_switch_rate": 0.422463,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.43,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.29,
+      "fte_segment_share_smb": 0.8,
+      "fte_segment_share_mm": 0.18,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 14,
+      "adoption_rank__micro": 2,
+      "adoption_growth_rank_r3m__micro": 1,
+      "customer_growth_rank_mom__micro": 2,
+      "new_adopter_rank__micro": 1,
+      "competitor_switch_rank__micro": 1,
+      "spend_share_rank__micro": 1
+    },
+    {
+      "vendor_slug": "anthropic.com",
+      "software_category": "generative AI",
+      "adoption_rate": 0.5531,
+      "adoption_rate_micro": 0.57,
+      "adoption_rate_smb": 0.55,
+      "adoption_rate_mm": 0.56,
+      "adoption_rate_ent": 0.53,
+      "adoption_rate_yoy_change": 0.32,
+      "global_adoption_rate": 0.3443,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.0877,
+      "share_of_category_spend": 0.5411854238037455,
+      "new_adopter_share": 0.65,
+      "competitor_switch_rate": 0.34,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.42,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.29,
+      "fte_segment_share_smb": 0.81,
+      "fte_segment_share_mm": 0.18,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 19,
+      "adoption_rank__micro": 2,
+      "adoption_growth_rank_r3m__micro": 1,
+      "customer_growth_rank_mom__micro": 1,
+      "new_adopter_rank__micro": 1,
+      "competitor_switch_rank__micro": 1,
+      "spend_share_rank__micro": 1
+    },
+    {
+      "vendor_slug": "cursor.com",
+      "software_category": "generative AI",
+      "adoption_rate": 0.2693,
+      "adoption_rate_micro": 0.28,
+      "adoption_rate_smb": 0.27,
+      "adoption_rate_mm": 0.27,
+      "adoption_rate_ent": 0.23,
+      "adoption_rate_yoy_change": 0.09,
+      "global_adoption_rate": 0.1676,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0082,
+      "share_of_category_spend": 0.03524143815056296,
+      "new_adopter_share": 0.06,
+      "competitor_switch_rate": 0.18,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.43,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.29,
+      "fte_segment_share_smb": 0.81,
+      "fte_segment_share_mm": 0.18,
+      "fte_segment_share_ent": 0.01,
+      "global_adoption_rank": 43,
+      "adoption_rank__micro": 3,
+      "adoption_growth_rank_r3m__micro": 14,
+      "customer_growth_rank_mom__micro": 9,
+      "new_adopter_rank__micro": 3,
+      "competitor_switch_rank__micro": 3,
+      "spend_share_rank__micro": 5
+    },
+    {
+      "vendor_slug": "cursor",
+      "software_category": "generative AI",
+      "adoption_rate": 0.248914,
+      "adoption_rate_micro": 0.259331,
+      "adoption_rate_smb": 0.249273,
+      "adoption_rate_mm": 0.250048,
+      "adoption_rate_ent": 0.217295,
+      "adoption_rate_yoy_change": 0.020975,
+      "global_adoption_rate": 0.170287,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.01208,
+      "share_of_category_spend": 0.032396887943539,
+      "new_adopter_share": 0.04098,
+      "competitor_switch_rate": 0.176418,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.44,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.3,
+      "fte_segment_share_smb": 0.81,
+      "fte_segment_share_mm": 0.18,
+      "fte_segment_share_ent": 0.01,
+      "global_adoption_rank": 41,
+      "adoption_rank__micro": 3,
+      "adoption_growth_rank_r3m__micro": 12,
+      "customer_growth_rank_mom__micro": 10,
+      "new_adopter_rank__micro": 3,
+      "competitor_switch_rank__micro": 3,
+      "spend_share_rank__micro": 5
+    },
+    {
+      "vendor_slug": "amazon",
+      "software_category": "generative AI",
+      "adoption_rate": 0.1567,
+      "adoption_rate_micro": 0.1,
+      "adoption_rate_smb": 0.13,
+      "adoption_rate_mm": 0.27,
+      "adoption_rate_ent": 0.25,
+      "adoption_rate_yoy_change": -0.05,
+      "global_adoption_rate": 0.1115,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0049,
+      "share_of_category_spend": 0.5953203124592105,
+      "new_adopter_share": 0.02,
+      "competitor_switch_rate": 0.08,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.51,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.31,
+      "fte_segment_share_smb": 0.68,
+      "fte_segment_share_mm": 0.3,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 198,
+      "adoption_rank__micro": 5,
+      "adoption_growth_rank_r3m__micro": 18,
+      "customer_growth_rank_mom__micro": 18,
+      "new_adopter_rank__micro": 6,
+      "competitor_switch_rank__micro": 5,
+      "spend_share_rank__micro": 1
+    },
+    {
+      "vendor_slug": "perplexity.ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.1107,
+      "adoption_rate_micro": 0.11,
+      "adoption_rate_smb": 0.11,
+      "adoption_rate_mm": 0.12,
+      "adoption_rate_ent": 0.12,
+      "adoption_rate_yoy_change": 0.05,
+      "global_adoption_rate": 0.0689,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0013,
+      "share_of_category_spend": 0.00429505594342626,
+      "new_adopter_share": 0.02,
+      "competitor_switch_rate": 0.1,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.43,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.3,
+      "fte_segment_share_smb": 0.8,
+      "fte_segment_share_mm": 0.19,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 107,
+      "adoption_rank__micro": 4,
+      "adoption_growth_rank_r3m__micro": 11,
+      "customer_growth_rank_mom__micro": 7,
+      "new_adopter_rank__micro": 6,
+      "competitor_switch_rank__micro": 4,
+      "spend_share_rank__micro": 8
+    },
+    {
+      "vendor_slug": "perplexity-ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.107495,
+      "adoption_rate_micro": 0.102334,
+      "adoption_rate_smb": 0.10525,
+      "adoption_rate_mm": 0.116405,
+      "adoption_rate_ent": 0.121951,
+      "adoption_rate_yoy_change": 0.041052,
+      "global_adoption_rate": 0.073539,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.000512,
+      "share_of_category_spend": 0.002503316822780385,
+      "new_adopter_share": 0.021831,
+      "competitor_switch_rate": 0.088618,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.43,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.31,
+      "fte_segment_share_smb": 0.79,
+      "fte_segment_share_mm": 0.19,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 97,
+      "adoption_rank__micro": 4,
+      "adoption_growth_rank_r3m__micro": 9,
+      "customer_growth_rank_mom__micro": 5,
+      "new_adopter_rank__micro": 4,
+      "competitor_switch_rank__micro": 4,
+      "spend_share_rank__micro": 9
+    },
+    {
+      "vendor_slug": "lovable.dev",
+      "software_category": "generative AI",
+      "adoption_rate": 0.107,
+      "adoption_rate_micro": 0.1,
+      "adoption_rate_smb": 0.1,
+      "adoption_rate_mm": 0.12,
+      "adoption_rate_ent": 0.14,
+      "adoption_rate_yoy_change": 0.1,
+      "global_adoption_rate": 0.0666,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.0038,
+      "share_of_category_spend": 0.00157564076213016,
+      "new_adopter_share": 0.03,
+      "competitor_switch_rate": 0.08,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.41,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.34,
+      "fte_segment_share_smb": 0.78,
+      "fte_segment_share_mm": 0.2,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 110,
+      "adoption_rank__micro": 5,
+      "adoption_growth_rank_r3m__micro": 2,
+      "customer_growth_rank_mom__micro": 5,
+      "new_adopter_rank__micro": 4,
+      "competitor_switch_rank__micro": 5,
+      "spend_share_rank__micro": 9
+    },
+    {
+      "vendor_slug": "x.ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0713,
+      "adoption_rate_micro": 0.07,
+      "adoption_rate_smb": 0.07,
+      "adoption_rate_mm": 0.07,
+      "adoption_rate_ent": 0.08,
+      "adoption_rate_yoy_change": 0.06,
+      "global_adoption_rate": 0.0444,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0004,
+      "share_of_category_spend": 0.009580188297419155,
+      "new_adopter_share": 0.02,
+      "competitor_switch_rate": null,
+      "dominant_fte_segment": null,
+      "dominant_fte_pct": null,
+      "secondary_fte_segment": null,
+      "secondary_fte_pct": null,
+      "fte_segment_share_smb": null,
+      "fte_segment_share_mm": null,
+      "fte_segment_share_ent": null,
+      "global_adoption_rank": 130,
+      "adoption_rank__micro": 6,
+      "adoption_growth_rank_r3m__micro": 3,
+      "customer_growth_rank_mom__micro": 6,
+      "new_adopter_rank__micro": 5,
+      "competitor_switch_rank__micro": 13,
+      "spend_share_rank__micro": 6
+    },
+    {
+      "vendor_slug": "xai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.068434,
+      "adoption_rate_micro": 0.064797,
+      "adoption_rate_smb": 0.067202,
+      "adoption_rate_mm": 0.073213,
+      "adoption_rate_ent": 0.077605,
+      "adoption_rate_yoy_change": 0.052319,
+      "global_adoption_rate": 0.046817,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.000413,
+      "share_of_category_spend": 0.008760148795958548,
+      "new_adopter_share": 0.010724,
+      "competitor_switch_rate": 0.056226,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.41,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.33,
+      "fte_segment_share_smb": 0.8,
+      "fte_segment_share_mm": 0.19,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 121,
+      "adoption_rank__micro": 5,
+      "adoption_growth_rank_r3m__micro": 3,
+      "customer_growth_rank_mom__micro": 6,
+      "new_adopter_rank__micro": 5,
+      "competitor_switch_rank__micro": 5,
+      "spend_share_rank__micro": 7
+    },
+    {
+      "vendor_slug": "windsurf.ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0355,
+      "adoption_rate_micro": 0.03,
+      "adoption_rate_smb": 0.03,
+      "adoption_rate_mm": 0.04,
+      "adoption_rate_ent": 0.05,
+      "adoption_rate_yoy_change": 0.01,
+      "global_adoption_rate": 0.0221,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0024,
+      "share_of_category_spend": 0.0006741134996864981,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": null,
+      "dominant_fte_segment": null,
+      "dominant_fte_pct": null,
+      "secondary_fte_segment": null,
+      "secondary_fte_pct": null,
+      "fte_segment_share_smb": null,
+      "fte_segment_share_mm": null,
+      "fte_segment_share_ent": null,
+      "global_adoption_rank": 169,
+      "adoption_rank__micro": 8,
+      "adoption_growth_rank_r3m__micro": 13,
+      "customer_growth_rank_mom__micro": 13,
+      "new_adopter_rank__micro": 9,
+      "competitor_switch_rank__micro": 15,
+      "spend_share_rank__micro": 13
+    },
+    {
+      "vendor_slug": "windsurf",
+      "software_category": "generative AI",
+      "adoption_rate": 0.029821,
+      "adoption_rate_micro": 0.028616,
+      "adoption_rate_smb": 0.028258,
+      "adoption_rate_mm": 0.036026,
+      "adoption_rate_ent": 0.039911,
+      "adoption_rate_yoy_change": -0.002926,
+      "global_adoption_rate": 0.020401,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.004508,
+      "share_of_category_spend": 0.01977119537331076,
+      "new_adopter_share": 0.000766,
+      "competitor_switch_rate": 0.025232,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.43,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.34,
+      "fte_segment_share_smb": 0.77,
+      "fte_segment_share_mm": 0.21,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 164,
+      "adoption_rank__micro": 6,
+      "adoption_growth_rank_r3m__micro": 11,
+      "customer_growth_rank_mom__micro": 13,
+      "new_adopter_rank__micro": 7,
+      "competitor_switch_rank__micro": 6,
+      "spend_share_rank__micro": 6
+    },
+    {
+      "vendor_slug": "coderabbit",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0201,
+      "adoption_rate_micro": 0.02,
+      "adoption_rate_smb": 0.02,
+      "adoption_rate_mm": 0.02,
+      "adoption_rate_ent": 0.02,
+      "adoption_rate_yoy_change": 0.01,
+      "global_adoption_rate": 0.0143,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.001,
+      "share_of_category_spend": 0.0002399575529829499,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": 0.01,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.47,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.31,
+      "fte_segment_share_smb": 0.81,
+      "fte_segment_share_mm": 0.18,
+      "fte_segment_share_ent": 0.01,
+      "global_adoption_rank": 456,
+      "adoption_rank__micro": 10,
+      "adoption_growth_rank_r3m__micro": 5,
+      "customer_growth_rank_mom__micro": 5,
+      "new_adopter_rank__micro": 12,
+      "competitor_switch_rank__micro": 10,
+      "spend_share_rank__micro": 16
+    },
+    {
+      "vendor_slug": "huggingface.co",
+      "software_category": "generative AI",
+      "adoption_rate": 0.02,
+      "adoption_rate_micro": 0.02,
+      "adoption_rate_smb": 0.02,
+      "adoption_rate_mm": 0.02,
+      "adoption_rate_ent": 0.02,
+      "adoption_rate_yoy_change": 0,
+      "global_adoption_rate": 0.0124,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0017,
+      "share_of_category_spend": 0.0005976855625376517,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": 0.02,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.37,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.36,
+      "fte_segment_share_smb": 0.82,
+      "fte_segment_share_mm": 0.16,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 191,
+      "adoption_rank__micro": 9,
+      "adoption_growth_rank_r3m__micro": 12,
+      "customer_growth_rank_mom__micro": 15,
+      "new_adopter_rank__micro": 10,
+      "competitor_switch_rank__micro": 7,
+      "spend_share_rank__micro": 14
+    },
+    {
+      "vendor_slug": "langchain.com",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0186,
+      "adoption_rate_micro": 0.02,
+      "adoption_rate_smb": 0.02,
+      "adoption_rate_mm": 0.02,
+      "adoption_rate_ent": 0.02,
+      "adoption_rate_yoy_change": 0.01,
+      "global_adoption_rate": 0.0116,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0008,
+      "share_of_category_spend": 0.001019003635808872,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": null,
+      "dominant_fte_segment": null,
+      "dominant_fte_pct": null,
+      "secondary_fte_segment": null,
+      "secondary_fte_pct": null,
+      "fte_segment_share_smb": null,
+      "fte_segment_share_mm": null,
+      "fte_segment_share_ent": null,
+      "global_adoption_rank": 193,
+      "adoption_rank__micro": 10,
+      "adoption_growth_rank_r3m__micro": 9,
+      "customer_growth_rank_mom__micro": 10,
+      "new_adopter_rank__micro": 8,
+      "competitor_switch_rank__micro": 14,
+      "spend_share_rank__micro": 12
+    },
+    {
+      "vendor_slug": "hugging-face",
+      "software_category": "generative AI",
+      "adoption_rate": 0.018548,
+      "adoption_rate_micro": 0.01991,
+      "adoption_rate_smb": 0.018767,
+      "adoption_rate_mm": 0.017432,
+      "adoption_rate_ent": 0.019956,
+      "adoption_rate_yoy_change": 0.001313,
+      "global_adoption_rate": 0.012689,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.000746,
+      "share_of_category_spend": 0.0003401628889078416,
+      "new_adopter_share": 0.000383,
+      "competitor_switch_rate": 0.01623,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.38,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.33,
+      "fte_segment_share_smb": 0.82,
+      "fte_segment_share_mm": 0.16,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 176,
+      "adoption_rank__micro": 7,
+      "adoption_growth_rank_r3m__micro": 10,
+      "customer_growth_rank_mom__micro": 8,
+      "new_adopter_rank__micro": 9,
+      "competitor_switch_rank__micro": 7,
+      "spend_share_rank__micro": 12
+    },
+    {
+      "vendor_slug": "langchain",
+      "software_category": "generative AI",
+      "adoption_rate": 0.017306,
+      "adoption_rate_micro": 0.017909,
+      "adoption_rate_smb": 0.016887,
+      "adoption_rate_mm": 0.019164,
+      "adoption_rate_ent": 0.017738,
+      "adoption_rate_yoy_change": 0.003185,
+      "global_adoption_rate": 0.011843,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.000626,
+      "share_of_category_spend": 0.0006371471993807253,
+      "new_adopter_share": 0.000768,
+      "competitor_switch_rate": 0.015346,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.45,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.28,
+      "fte_segment_share_smb": 0.79,
+      "fte_segment_share_mm": 0.2,
+      "fte_segment_share_ent": 0.01,
+      "global_adoption_rank": 178,
+      "adoption_rank__micro": 8,
+      "adoption_growth_rank_r3m__micro": 9,
+      "customer_growth_rank_mom__micro": 8,
+      "new_adopter_rank__micro": 7,
+      "competitor_switch_rank__micro": 8,
+      "spend_share_rank__micro": 12
+    },
+    {
+      "vendor_slug": "fal-ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.009377,
+      "adoption_rate_micro": 0.011133,
+      "adoption_rate_smb": 0.010003,
+      "adoption_rate_mm": 0.007166,
+      "adoption_rate_ent": 0.002217,
+      "adoption_rate_yoy_change": 0.00886,
+      "global_adoption_rate": 0.006415,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.00169,
+      "share_of_category_spend": 0.006095939248621541,
+      "new_adopter_share": 0.001915,
+      "competitor_switch_rate": 0.008354,
+      "dominant_fte_segment": "1. SMB",
+      "dominant_fte_pct": 0.51,
+      "secondary_fte_segment": "2. Mid-Market",
+      "secondary_fte_pct": 0.49,
+      "fte_segment_share_smb": 0.87,
+      "fte_segment_share_mm": 0.13,
+      "fte_segment_share_ent": null,
+      "global_adoption_rank": 190,
+      "adoption_rank__micro": 8,
+      "adoption_growth_rank_r3m__micro": 2,
+      "customer_growth_rank_mom__micro": 1,
+      "new_adopter_rank__micro": 6,
+      "competitor_switch_rank__micro": 8,
+      "spend_share_rank__micro": 8
+    },
+    {
+      "vendor_slug": "fal.ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0079,
+      "adoption_rate_micro": 0.01,
+      "adoption_rate_smb": 0.01,
+      "adoption_rate_mm": 0.01,
+      "adoption_rate_ent": 0,
+      "adoption_rate_yoy_change": 0.01,
+      "global_adoption_rate": 0.0049,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.0011,
+      "share_of_category_spend": 0.007964706877439215,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": 0.01,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.38,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.31,
+      "fte_segment_share_smb": 0.82,
+      "fte_segment_share_mm": 0.16,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 212,
+      "adoption_rank__micro": 11,
+      "adoption_growth_rank_r3m__micro": 4,
+      "customer_growth_rank_mom__micro": 2,
+      "new_adopter_rank__micro": 12,
+      "competitor_switch_rank__micro": 9,
+      "spend_share_rank__micro": 7
+    },
+    {
+      "vendor_slug": "fireworks.ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0049,
+      "adoption_rate_micro": 0.01,
+      "adoption_rate_smb": 0,
+      "adoption_rate_mm": 0.01,
+      "adoption_rate_ent": 0,
+      "adoption_rate_yoy_change": 0,
+      "global_adoption_rate": 0.003,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0002,
+      "share_of_category_spend": 0.2149122505669767,
+      "new_adopter_share": null,
+      "competitor_switch_rate": 0.01,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.48,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.32,
+      "fte_segment_share_smb": 0.81,
+      "fte_segment_share_mm": 0.18,
+      "fte_segment_share_ent": 0.01,
+      "global_adoption_rank": 222,
+      "adoption_rank__micro": 12,
+      "adoption_growth_rank_r3m__micro": 8,
+      "customer_growth_rank_mom__micro": 11,
+      "new_adopter_rank__micro": 14,
+      "competitor_switch_rank__micro": 10,
+      "spend_share_rank__micro": 2
+    },
+    {
+      "vendor_slug": "fireworks-ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.004896,
+      "adoption_rate_micro": 0.006066,
+      "adoption_rate_smb": 0.00466,
+      "adoption_rate_mm": 0.005811,
+      "adoption_rate_ent": 0.006652,
+      "adoption_rate_yoy_change": 0.000846,
+      "global_adoption_rate": 0.003349,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.000186,
+      "share_of_category_spend": 0.1227544703184292,
+      "new_adopter_share": null,
+      "competitor_switch_rate": 0.004637,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.55,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.29,
+      "fte_segment_share_smb": 0.78,
+      "fte_segment_share_mm": 0.22,
+      "fte_segment_share_ent": 0.01,
+      "global_adoption_rank": 203,
+      "adoption_rank__micro": 9,
+      "adoption_growth_rank_r3m__micro": 7,
+      "customer_growth_rank_mom__micro": 3,
+      "new_adopter_rank__micro": 12,
+      "competitor_switch_rank__micro": 10,
+      "spend_share_rank__micro": 3
+    },
+    {
+      "vendor_slug": "together.ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0044,
+      "adoption_rate_micro": 0.01,
+      "adoption_rate_smb": 0,
+      "adoption_rate_mm": 0,
+      "adoption_rate_ent": 0,
+      "adoption_rate_yoy_change": 0,
+      "global_adoption_rate": 0.0027,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.0004,
+      "share_of_category_spend": 0.125669098879435,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": 0,
+      "dominant_fte_segment": "3. Enterprise",
+      "dominant_fte_pct": 0.51,
+      "secondary_fte_segment": "2. Mid-Market",
+      "secondary_fte_pct": 0.32,
+      "fte_segment_share_smb": 0.74,
+      "fte_segment_share_mm": 0.22,
+      "fte_segment_share_ent": 0.04,
+      "global_adoption_rank": 225,
+      "adoption_rank__micro": 13,
+      "adoption_growth_rank_r3m__micro": 5,
+      "customer_growth_rank_mom__micro": 4,
+      "new_adopter_rank__micro": 11,
+      "competitor_switch_rank__micro": 12,
+      "spend_share_rank__micro": 3
+    },
+    {
+      "vendor_slug": "together-ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.004378,
+      "adoption_rate_micro": 0.00471,
+      "adoption_rate_smb": 0.004531,
+      "adoption_rate_mm": 0.00368,
+      "adoption_rate_ent": 0.004435,
+      "adoption_rate_yoy_change": 0.002827,
+      "global_adoption_rate": 0.002995,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.00012,
+      "share_of_category_spend": 0.07246074404246435,
+      "new_adopter_share": 0.000766,
+      "competitor_switch_rate": 0.003887,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.36,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.34,
+      "fte_segment_share_smb": 0.83,
+      "fte_segment_share_mm": 0.15,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 205,
+      "adoption_rank__micro": 10,
+      "adoption_growth_rank_r3m__micro": 4,
+      "customer_growth_rank_mom__micro": 4,
+      "new_adopter_rank__micro": 8,
+      "competitor_switch_rank__micro": 11,
+      "spend_share_rank__micro": 4
+    },
+    {
+      "vendor_slug": "ideogram",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0042,
+      "adoption_rate_micro": 0,
+      "adoption_rate_smb": 0,
+      "adoption_rate_mm": 0,
+      "adoption_rate_ent": 0.01,
+      "adoption_rate_yoy_change": 0,
+      "global_adoption_rate": 0.003,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0004,
+      "share_of_category_spend": 0.0001961219505841749,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": 0,
+      "dominant_fte_segment": "3. Enterprise",
+      "dominant_fte_pct": 0.47,
+      "secondary_fte_segment": "2. Mid-Market",
+      "secondary_fte_pct": 0.3,
+      "fte_segment_share_smb": 0.81,
+      "fte_segment_share_mm": 0.16,
+      "fte_segment_share_ent": 0.03,
+      "global_adoption_rank": 560,
+      "adoption_rank__micro": 14,
+      "adoption_growth_rank_r3m__micro": 14,
+      "customer_growth_rank_mom__micro": 19,
+      "new_adopter_rank__micro": 11,
+      "competitor_switch_rank__micro": 15,
+      "spend_share_rank__micro": 17
+    },
+    {
+      "vendor_slug": "openrouter.ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0041,
+      "adoption_rate_micro": 0,
+      "adoption_rate_smb": 0,
+      "adoption_rate_mm": 0,
+      "adoption_rate_ent": 0.01,
+      "adoption_rate_yoy_change": 0,
+      "global_adoption_rate": 0.0025,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.0006,
+      "share_of_category_spend": 9.939610933609314e-05,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": 0.05,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.43,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.3,
+      "fte_segment_share_smb": 0.81,
+      "fte_segment_share_mm": 0.18,
+      "fte_segment_share_ent": 0.01,
+      "global_adoption_rank": 227,
+      "adoption_rank__micro": 14,
+      "adoption_growth_rank_r3m__micro": 6,
+      "customer_growth_rank_mom__micro": 3,
+      "new_adopter_rank__micro": 13,
+      "competitor_switch_rank__micro": 6,
+      "spend_share_rank__micro": 15
+    },
+    {
+      "vendor_slug": "openrouter",
+      "software_category": "generative AI",
+      "adoption_rate": 0.003758,
+      "adoption_rate_micro": 0.003711,
+      "adoption_rate_smb": 0.003762,
+      "adoption_rate_mm": 0.003099,
+      "adoption_rate_ent": 0.011086,
+      "adoption_rate_yoy_change": null,
+      "global_adoption_rate": 0.002571,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.000161,
+      "share_of_category_spend": 6.619863260322662e-05,
+      "new_adopter_share": 0.000383,
+      "competitor_switch_rate": 0.003342,
+      "dominant_fte_segment": "3. Enterprise",
+      "dominant_fte_pct": 0.59,
+      "secondary_fte_segment": "2. Mid-Market",
+      "secondary_fte_pct": 0.22,
+      "fte_segment_share_smb": 0.81,
+      "fte_segment_share_mm": 0.14,
+      "fte_segment_share_ent": 0.05,
+      "global_adoption_rank": 207,
+      "adoption_rank__micro": 11,
+      "adoption_growth_rank_r3m__micro": 5,
+      "customer_growth_rank_mom__micro": 9,
+      "new_adopter_rank__micro": 10,
+      "competitor_switch_rank__micro": 12,
+      "spend_share_rank__micro": 13
+    },
+    {
+      "vendor_slug": "one-medical",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0029,
+      "adoption_rate_micro": 0,
+      "adoption_rate_smb": 0,
+      "adoption_rate_mm": 0,
+      "adoption_rate_ent": 0,
+      "adoption_rate_yoy_change": 0,
+      "global_adoption_rate": 0.002,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0001,
+      "share_of_category_spend": 0.0001381850829478331,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": 0,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.55,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.26,
+      "fte_segment_share_smb": 0.75,
+      "fte_segment_share_mm": 0.24,
+      "fte_segment_share_ent": 0.01,
+      "global_adoption_rank": 580,
+      "adoption_rank__micro": 18,
+      "adoption_growth_rank_r3m__micro": 8,
+      "customer_growth_rank_mom__micro": 15,
+      "new_adopter_rank__micro": 9,
+      "competitor_switch_rank__micro": 14,
+      "spend_share_rank__micro": 18
+    },
+    {
+      "vendor_slug": "cohere.ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0027,
+      "adoption_rate_micro": 0,
+      "adoption_rate_smb": 0,
+      "adoption_rate_mm": 0,
+      "adoption_rate_ent": 0,
+      "adoption_rate_yoy_change": 0,
+      "global_adoption_rate": 0.0035,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.0002,
+      "share_of_category_spend": 0.001297374453534178,
+      "new_adopter_share": null,
+      "competitor_switch_rate": 0.01,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.46,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.31,
+      "fte_segment_share_smb": 0.75,
+      "fte_segment_share_mm": 0.23,
+      "fte_segment_share_ent": 0.02,
+      "global_adoption_rank": 230,
+      "adoption_rank__micro": 15,
+      "adoption_growth_rank_r3m__micro": 10,
+      "customer_growth_rank_mom__micro": 14,
+      "new_adopter_rank__micro": 15,
+      "competitor_switch_rank__micro": 11,
+      "spend_share_rank__micro": 11
+    },
+    {
+      "vendor_slug": "cohere",
+      "software_category": "generative AI",
+      "adoption_rate": 0.002482,
+      "adoption_rate_micro": 0.002355,
+      "adoption_rate_smb": 0.001966,
+      "adoption_rate_mm": 0.004648,
+      "adoption_rate_ent": 0.004435,
+      "adoption_rate_yoy_change": -0.000793,
+      "global_adoption_rate": 0.003632,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -0.000118,
+      "share_of_category_spend": 0.0007737469361032387,
+      "new_adopter_share": null,
+      "competitor_switch_rate": 0.005012,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.44,
+      "secondary_fte_segment": "3. Enterprise",
+      "secondary_fte_pct": 0.38,
+      "fte_segment_share_smb": 0.72,
+      "fte_segment_share_mm": 0.26,
+      "fte_segment_share_ent": 0.03,
+      "global_adoption_rank": 211,
+      "adoption_rank__micro": 12,
+      "adoption_growth_rank_r3m__micro": 8,
+      "customer_growth_rank_mom__micro": 12,
+      "new_adopter_rank__micro": 13,
+      "competitor_switch_rank__micro": 9,
+      "spend_share_rank__micro": 11
+    },
+    {
+      "vendor_slug": "mistral.ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.0014,
+      "adoption_rate_micro": 0,
+      "adoption_rate_smb": 0,
+      "adoption_rate_mm": 0,
+      "adoption_rate_ent": 0,
+      "adoption_rate_yoy_change": 0,
+      "global_adoption_rate": 0.0021,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0,
+      "share_of_category_spend": 0.001373279045316069,
+      "new_adopter_share": 0,
+      "competitor_switch_rate": 0.01,
+      "dominant_fte_segment": "3. Enterprise",
+      "dominant_fte_pct": 0.4,
+      "secondary_fte_segment": "2. Mid-Market",
+      "secondary_fte_pct": 0.37,
+      "fte_segment_share_smb": 0.79,
+      "fte_segment_share_mm": 0.19,
+      "fte_segment_share_ent": 0.03,
+      "global_adoption_rank": 231,
+      "adoption_rank__micro": 16,
+      "adoption_growth_rank_r3m__micro": 7,
+      "customer_growth_rank_mom__micro": 8,
+      "new_adopter_rank__micro": 7,
+      "competitor_switch_rank__micro": 8,
+      "spend_share_rank__micro": 10
+    },
+    {
+      "vendor_slug": "mistral-ai",
+      "software_category": "generative AI",
+      "adoption_rate": 0.001276,
+      "adoption_rate_micro": 0.001213,
+      "adoption_rate_smb": 0.001026,
+      "adoption_rate_mm": 0.002324,
+      "adoption_rate_ent": 0.002217,
+      "adoption_rate_yoy_change": 0.000242,
+      "global_adoption_rate": 0.002028,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": -4.3e-05,
+      "share_of_category_spend": 0.001015949417978468,
+      "new_adopter_share": null,
+      "competitor_switch_rate": 0.002762,
+      "dominant_fte_segment": "3. Enterprise",
+      "dominant_fte_pct": 0.52,
+      "secondary_fte_segment": "2. Mid-Market",
+      "secondary_fte_pct": 0.33,
+      "fte_segment_share_smb": 0.72,
+      "fte_segment_share_mm": 0.23,
+      "fte_segment_share_ent": 0.05,
+      "global_adoption_rank": 214,
+      "adoption_rank__micro": 13,
+      "adoption_growth_rank_r3m__micro": 6,
+      "customer_growth_rank_mom__micro": 7,
+      "new_adopter_rank__micro": 11,
+      "competitor_switch_rank__micro": 13,
+      "spend_share_rank__micro": 10
+    },
+    {
+      "vendor_slug": "black-forest-labs",
+      "software_category": "generative AI",
+      "adoption_rate": 0.001,
+      "adoption_rate_micro": 0,
+      "adoption_rate_smb": 0,
+      "adoption_rate_mm": 0,
+      "adoption_rate_ent": 0,
+      "adoption_rate_yoy_change": 0,
+      "global_adoption_rate": 0.0007,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0,
+      "share_of_category_spend": 0.0023368672632128,
+      "new_adopter_share": null,
+      "competitor_switch_rate": 0,
+      "dominant_fte_segment": "2. Mid-Market",
+      "dominant_fte_pct": 0.6,
+      "secondary_fte_segment": "1. SMB",
+      "secondary_fte_pct": 0.4,
+      "fte_segment_share_smb": 0.82,
+      "fte_segment_share_mm": 0.18,
+      "fte_segment_share_ent": null,
+      "global_adoption_rank": 596,
+      "adoption_rank__micro": 21,
+      "adoption_growth_rank_r3m__micro": 9,
+      "customer_growth_rank_mom__micro": 8,
+      "new_adopter_rank__micro": 17,
+      "competitor_switch_rank__micro": 16,
+      "spend_share_rank__micro": 11
+    }
+  ]
+}
+
+>>> Using first vendor slug: openai
+
+============================================================
+  GET /ramp-rate/vendors/resolve?vendor_name=Slack
+============================================================
+{
+  "vendor_slug": "slack.com",
+  "software_categories": [
+    "Communication"
+  ]
+}
+
+============================================================
+  GET /ramp-rate/vendors/slack.com/profile
+============================================================
+{
+  "vendor_slug": "slack.com",
+  "categories": [
+    {
+      "vendor_slug": "slack.com",
+      "software_category": "Communication",
+      "adoption_rate": 0.5529,
+      "adoption_rate_micro": 0.57,
+      "adoption_rate_smb": 0.56,
+      "adoption_rate_mm": 0.54,
+      "adoption_rate_ent": 0.53,
+      "adoption_rate_yoy_change": 0.03,
+      "global_adoption_rate": 0.2888,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "adoption_growth_rate_mom__micro": 0.0007,
+      "share_of_category_spend": 0.8013923510961728,
+      "new_adopter_share": 0.38,
+      "competitor_switch_rate": 0.47,
+      "dominant_fte_segment": "3. Enterprise",
+      "dominant_fte_pct": 0.46,
+      "secondary_fte_segment": "2. Mid-Market",
+      "secondary_fte_pct": 0.43,
+      "fte_segment_share_smb": 0.6,
+      "fte_segment_share_mm": 0.36,
+      "fte_segment_share_ent": 0.05,
+      "global_adoption_rank": 21,
+      "adoption_rank__micro": 2,
+      "adoption_growth_rank_r3m__micro": 4,
+      "customer_growth_rank_mom__micro": 3,
+      "new_adopter_rank__micro": 2,
+      "competitor_switch_rank__micro": 2,
+      "spend_share_rank__micro": 1
+    }
+  ]
+}
+
+============================================================
+  GET /ramp-rate/vendors/compare (slack.com vs zoom)
+============================================================
+{
+  "vendors": [
+    {
+      "vendor_slug": "zoom",
+      "group_adoption_share": 0.5658,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "categories": [
+        "Communication"
+      ]
+    },
+    {
+      "vendor_slug": "slack.com",
+      "group_adoption_share": 0.4342,
+      "adoption_growth_rate_r3m": null,
+      "global_adoption_growth_rate_r3m": null,
+      "categories": [
+        "Communication"
+      ]
+    }
+  ],
+  "unresolved_vendor_slugs": []
+}
+
+============================================================
+  GET /ai-index/adoption (months=1)
+============================================================
+{
+  "data": [
+    {
+      "month": "2026-03",
+      "ai_adoption_share": 0.5034562437582,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3517339965143831
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.3061664088354515
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.04341355474180978
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.01864217596490884
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0006462098811365461
+        }
+      ]
+    }
+  ]
+}
+
+============================================================
+  GET /ai-index/adoption (months=12)
+============================================================
+{
+  "data": [
+    {
+      "month": "2026-03",
+      "ai_adoption_share": 0.5034562437582,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3517339965143831
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.3061664088354515
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.04341355474180978
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.01864217596490884
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0006462098811365461
+        }
+      ]
+    },
+    {
+      "month": "2026-02",
+      "ai_adoption_share": 0.4754248393202571,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3436362501819997
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.243754809992304
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.04663352538635938
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.01903196954884872
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0009151985356823429
+        }
+      ]
+    },
+    {
+      "month": "2026-01",
+      "ai_adoption_share": 0.4679727574464417,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3584421742316479
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.1952239320660373
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.04530367688262425
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.01987154618733566
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.000603474287684814
+        }
+      ]
+    },
+    {
+      "month": "2025-12",
+      "ai_adoption_share": 0.4656842864224235,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3676039835969537
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.1669370465504033
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.04265242665945654
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.01942228831508269
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0008336713081880041
+        }
+      ]
+    },
+    {
+      "month": "2025-11",
+      "ai_adoption_share": 0.4496688276733681,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3475788143328574
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.1512626676340487
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.03964706157698879
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.0176703255552695
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0003978748800524259
+        }
+      ]
+    },
+    {
+      "month": "2025-10",
+      "ai_adoption_share": 0.4499281609195402,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.357926245210728
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.1426005747126437
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.03280651340996169
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.0162595785440613
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0004549808429118774
+        }
+      ]
+    },
+    {
+      "month": "2025-09",
+      "ai_adoption_share": 0.4413641254034579,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3553931993894963
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.121600320264218
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.03257687592263617
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.01291065128731203
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0003002477043560938
+        }
+      ]
+    },
+    {
+      "month": "2025-08",
+      "ai_adoption_share": 0.4479060665362035,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3648010437051533
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.1205479452054795
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.03018917155903457
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.01469015003261579
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0002609262883235486
+        }
+      ]
+    },
+    {
+      "month": "2025-07",
+      "ai_adoption_share": 0.4359508093451289,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3503601654295966
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.110843307496371
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.03352414340883569
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.01470789625044507
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0005751691271123771
+        }
+      ]
+    },
+    {
+      "month": "2025-06",
+      "ai_adoption_share": 0.4169070398400685,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3338854776524346
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.09641582179066115
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.04029701556475796
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.005569041839211766
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0004283878337855205
+        }
+      ]
+    },
+    {
+      "month": "2025-05",
+      "ai_adoption_share": 0.4173072958086654,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.3355129451268004
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.08927572089187358
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.04285588053371035
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.005095578922564872
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0004418132013784572
+        }
+      ]
+    },
+    {
+      "month": "2025-04",
+      "ai_adoption_share": 0.4014995544356697,
+      "vendors": [
+        {
+          "vendor": "OpenAI",
+          "ai_adoption_share": 0.320130289155886
+        },
+        {
+          "vendor": "Anthropic",
+          "ai_adoption_share": 0.07943336508619366
+        },
+        {
+          "vendor": "Google",
+          "ai_adoption_share": 0.03208063177949175
+        },
+        {
+          "vendor": "xAI",
+          "ai_adoption_share": 0.004701471898718618
+        },
+        {
+          "vendor": "DeepSeek",
+          "ai_adoption_share": 0.0008604000860400087
+        }
+      ]
+    }
+  ]
+}
+
+============================================================
+  GET /ai-index/adoption/sectors (months=3)
+============================================================
+{
+  "data": [
+    {
+      "month": "2026-03",
+      "sectors": [
+        {
+          "sector": "Technology",
+          "ai_adoption_share": 0.7720960987436633
+        },
+        {
+          "sector": "Finance",
+          "ai_adoption_share": 0.6827973774586326
+        },
+        {
+          "sector": "Manufacturing",
+          "ai_adoption_share": 0.5224784532960633
+        },
+        {
+          "sector": "Retail",
+          "ai_adoption_share": 0.4371482176360225
+        },
+        {
+          "sector": "Health Care",
+          "ai_adoption_share": 0.3581255374032674
+        },
+        {
+          "sector": "Construction",
+          "ai_adoption_share": 0.3493061010735795
+        },
+        {
+          "sector": "Accommodation and Food Services",
+          "ai_adoption_share": 0.2771672771672772
+        }
+      ]
+    },
+    {
+      "month": "2026-02",
+      "sectors": [
+        {
+          "sector": "Technology",
+          "ai_adoption_share": 0.7608595194085028
+        },
+        {
+          "sector": "Finance",
+          "ai_adoption_share": 0.6474486414844268
+        },
+        {
+          "sector": "Manufacturing",
+          "ai_adoption_share": 0.4824817518248175
+        },
+        {
+          "sector": "Retail",
+          "ai_adoption_share": 0.4044795783926219
+        },
+        {
+          "sector": "Health Care",
+          "ai_adoption_share": 0.3340196751315488
+        },
+        {
+          "sector": "Construction",
+          "ai_adoption_share": 0.3173669467787115
+        },
+        {
+          "sector": "Accommodation and Food Services",
+          "ai_adoption_share": 0.2477124183006536
+        }
+      ]
+    },
+    {
+      "month": "2026-01",
+      "sectors": [
+        {
+          "sector": "Technology",
+          "ai_adoption_share": 0.7536266349583829
+        },
+        {
+          "sector": "Finance",
+          "ai_adoption_share": 0.6251705320600273
+        },
+        {
+          "sector": "Manufacturing",
+          "ai_adoption_share": 0.4712960641764853
+        },
+        {
+          "sector": "Retail",
+          "ai_adoption_share": 0.3935309973045822
+        },
+        {
+          "sector": "Health Care",
+          "ai_adoption_share": 0.3278921220723918
+        },
+        {
+          "sector": "Construction",
+          "ai_adoption_share": 0.3163958641063516
+        },
+        {
+          "sector": "Accommodation and Food Services",
+          "ai_adoption_share": 0.2538035961272476
+        }
+      ]
+    }
+  ]
+}
+
+============================================================
+  GET /ai-index/adoption/sizes (months=3)
+============================================================
+{
+  "data": [
+    {
+      "month": "2026-03",
+      "sizes": [
+        {
+          "size": "Small businesses",
+          "ai_adoption_share": 0.5548800418382689
+        },
+        {
+          "size": "Medium-sized businesses",
+          "ai_adoption_share": 0.6038871473354231
+        },
+        {
+          "size": "Large businesses",
+          "ai_adoption_share": 0.5514993481095176
+        }
+      ]
+    },
+    {
+      "month": "2026-02",
+      "sizes": [
+        {
+          "size": "Small businesses",
+          "ai_adoption_share": 0.5159610442310294
+        },
+        {
+          "size": "Medium-sized businesses",
+          "ai_adoption_share": 0.567925262748151
+        },
+        {
+          "size": "Large businesses",
+          "ai_adoption_share": 0.5199449793672627
+        }
+      ]
+    },
+    {
+      "month": "2026-01",
+      "sizes": [
+        {
+          "size": "Small businesses",
+          "ai_adoption_share": 0.5071054083885209
+        },
+        {
+          "size": "Medium-sized businesses",
+          "ai_adoption_share": 0.5561745589600743
+        },
+        {
+          "size": "Large businesses",
+          "ai_adoption_share": 0.4905149051490515
+        }
+      ]
+    }
+  ]
+}
+
+
+Done — all Ramp Data endpoints exercised.

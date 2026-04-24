@@ -1,0 +1,11 @@
+Rank,Model,Organization,Publication Date,Parameters,Training Dataset Size,Training Cost (2023 USD)
+1,Grok 4,xAI,2025-07-09,3.0T,,$387.8M
+2,GPT-4.5,OpenAI,2025-02-27,,,$340.0M
+3,Grok 3,xAI,2025-02-17,3.0T,,$217.8M
+4,Llama 3.1-405B,Meta AI,2024-07-23,405.0B,15.6T,$52.9M
+5,Llama 4 Behemoth (preview),Meta AI,2025-04-05,2.0T,30.0T,$44.6M
+6,GPT-4 (Mar 2023),OpenAI,2023-03-15,1.8T,5.4T,$37.3M
+7,Grok-2,xAI,2024-08-13,,,$31.6M
+8,Gemini 1.0 Ultra,Google DeepMind,2023-12-06,,,$30.7M
+9,Claude 3.5 Sonnet,Anthropic,2024-06-20,,,$25.9M
+10,Nemotron-4 340B,NVIDIA,2024-06-14,340.0B,9.0T,$21.3M

@@ -1,0 +1,9 @@
+Rank,Model,Organization,Publication Date,Parameters,Training Dataset Size,Training Cost (2023 USD)
+1,Llama 3.1-405B,Meta AI,2024-07-23,405.0B,15.6T,$52.9M
+2,Grok-2,xAI,2024-08-13,,,$31.6M
+3,Claude 3.5 Sonnet,Anthropic,2024-06-20,,,$25.9M
+4,Nemotron-4 340B,NVIDIA,2024-06-14,340.0B,9.0T,$21.3M
+5,Mistral Large,Mistral AI,2024-02-26,,,$14.1M
+6,Inflection-2.5,Inflection AI,2024-03-07,,,$11.8M
+7,DeepSeek-V3,DeepSeek,2024-12-24,671.0B,14.8T,$5.4M
+8,MegaScale (Production),"ByteDance,Peking University",2024-02-23,530.0B,,$2.6M

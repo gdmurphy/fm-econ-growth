@@ -1,0 +1,11 @@
+Rank,Model,Organization,Publication Date,Parameters,Training Dataset Size,Training Cost (2023 USD)
+1,GPT-4 (Mar 2023),OpenAI,2023-03-15,1.8T,5.4T,$37.3M
+2,Gemini 1.0 Ultra,Google DeepMind,2023-12-06,,,$30.7M
+3,Inflection-2,Inflection AI,2023-11-22,,,$13.5M
+4,Falcon-180B,Technology Innovation Institute,2023-09-06,180.0B,3.5T,$10.7M
+5,Amazon Titan,Amazon,2023-09-28,200.0B,4.0T,$7.9M
+6,PaLM 2,Google,2023-05-10,340.0B,3.6T,$5.0M
+7,Claude 2,Anthropic,2023-07-11,,,$4.9M
+8,xTrimoPGLM -100B,"Tsinghua University,BioMap Research",2023-07-06,100.0B,275.0B,$1.8M
+9,InternLM,"Shanghai AI Lab,SenseTime",2023-07-06,104.0B,1.6T,$1.5M
+10,Llama 2-70B,Meta AI,2023-07-18,70.0B,2.0T,$1.1M

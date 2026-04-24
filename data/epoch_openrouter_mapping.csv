@@ -1,0 +1,44 @@
+epoch_name,openrouter_id
+Kimi K2 Thinking,moonshotai/kimi-k2-thinking-20251106
+Kimi K2,moonshotai/kimi-k2
+Ling-1T,inclusionai/ling-1t
+DeepSeek-R1 (May 2025),deepseek/deepseek-r1-0528
+DeepSeek-V3 (Mar 2025),deepseek/deepseek-chat-v3-0324
+DeepSeek-R1,deepseek/deepseek-r1
+DeepSeek-V3,deepseek/deepseek-chat-v3
+LongCat-Flash,meituan/longcat-flash-chat
+Qwen3-Coder-480B-A35B,qwen/qwen3-coder-480b-a35b-07-25
+ERNIE-4.5-VL-424B-A47B (文心大模型4.5),baidu/ernie-4.5-vl-424b-a47b
+Llama 3.1-405B,meta-llama/llama-3.1-405b-instruct
+Llama 4 Maverick,meta-llama/llama-4-maverick-17b-128e-instruct
+Jamba 1.5-Large,ai21/jamba-1-5-large
+GLM-4.7,z-ai/glm-4.7-20251222
+GLM-4.6,z-ai/glm-4.6
+GLM-4.6,z-ai/glm-4.6-20251208
+GLM-4.5,z-ai/glm-4.5
+Nemotron-4 340B,nvidia/nemotron-4-340b-instruct
+Qwen3-235B-A22B-Thinking (Jul 2025),qwen/qwen3-235b-a22b-thinking-2507
+Qwen3-235B-A22B (Jul 2025),qwen/qwen3-235b-a22b-07-25
+Qwen3-235B-A22B,qwen/qwen3-235b-a22b-04-28
+MiniMax-M2.1,minimax/minimax-m2.1
+MiniMax-M2,minimax/minimax-m2
+DBRX,databricks/dbrx-instruct
+Pixtral Large,mistralai/pixtral-large-2411
+Mistral Large 2,mistralai/mistral-large-2411
+gpt-oss-120b,openai/gpt-oss-120b
+Llama 4 Scout,meta-llama/llama-4-scout-17b-16e-instruct
+Qwen2-72B,qwen/qwen-2-72b-instruct
+Qwen2.5-72B,qwen/qwen-2.5-72b-instruct
+Llama 2-70B,meta-llama/llama-2-70b-chat
+Llama 3-70B,meta-llama/llama-3-70b-instruct
+Llama 3.3 70B,meta-llama/llama-3.3-70b-instruct
+Mixtral 8x7B,mistralai/mixtral-8x7b-instruct
+Yi-34B,01-ai/yi-34b-chat
+Qwen3-Omni-30B-A3B,qwen/qwen3-30b-a3b-instruct-2507
+Qwen2.5-32B,qwen/qwen2.5-32b-instruct
+QwQ-32B,qwen/qwq-32b
+Olmo 3,allenai/olmo-3-32b-think-20251121
+Olmo 3,allenai/olmo-3.1-32b-instruct-20251215
+Tongyi DeepResearch,alibaba/tongyi-deepresearch-30b-a3b
+gpt-oss-20b,openai/gpt-oss-20b
+Llama 3.2 11B,meta-llama/llama-3.2-11b-vision-instruct
