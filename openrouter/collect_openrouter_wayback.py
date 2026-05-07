@@ -6,7 +6,7 @@ import pandas as pd
 from waybackpy import WaybackMachineCDXServerAPI
 import json_repair
 
-from openrouter.set_globals import *
+from set_globals import *
 
 decoder = json.JSONDecoder()
 

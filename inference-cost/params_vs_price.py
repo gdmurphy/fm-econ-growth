@@ -138,7 +138,7 @@ epoch_ow = epoch_ow.dropna(subset=['params_num'])
 panel = pd.read_parquet(data_dir / 'openrouter_panel.parquet')
 panel['date'] = pd.to_datetime(panel['date'])
 
-panel = panel[~panel['openrouter_id'].str.endswith(':free', na=False)]
+panel = panel[~panel['openrouter_id_uncleaned'].str.endswith(':free', na=False)]
 panel = panel[
     panel['prompt_price'].notna()
     & panel['completion_price'].notna()
@@ -147,7 +147,7 @@ panel = panel[
 ]
 panel['price'] = (3 * panel['prompt_price'] + panel['completion_price']) * 1e6
 
-min_price = panel.groupby('openrouter_id')['price'].min()
+min_price = panel.groupby('openrouter_id_uncleaned')['price'].min()
 
 # Reverse mapping: openrouter_id -> params_num (for expanding to all timestamps)
 id_to_params = {}
@@ -191,10 +191,10 @@ print(df[['name', 'params', 'price', 'adj_price']].to_string(index=False))
 # ---------------------------------------------------------------------------
 # Full panel for Plot 2: all timestamps for mapped models
 # ---------------------------------------------------------------------------
-panel_full = panel[panel['openrouter_id'].isin(id_to_params)].copy()
-panel_full['params'] = panel_full['openrouter_id'].map(id_to_params)
+panel_full = panel[panel['openrouter_id_uncleaned'].isin(id_to_params)].copy()
+panel_full['params'] = panel_full['openrouter_id_uncleaned'].map(id_to_params)
 panel_full['adj_price'] = panel_full['price'] * GPU_PRICE
-print(f'\nFull panel for binscatter: {len(panel_full)} observations across {panel_full["openrouter_id"].nunique()} model IDs')
+print(f'\nFull panel for binscatter: {len(panel_full)} observations across {panel_full["openrouter_id_uncleaned"].nunique()} model IDs')
 
 # ---------------------------------------------------------------------------
 # Shared axis formatter
@@ -248,16 +248,16 @@ print(f'\nPlot 1 saved to {out_dir / "params_vs_price.png"}')
 panel_full['log_params'] = np.log10(panel_full['params'])
 panel_full['log_adj_price'] = np.log10(panel_full['adj_price'])
 panel_full['week'] = panel_full['date'].dt.to_period('W').astype(str)
-panel_full['author'] = panel_full['openrouter_id'].str.split('/').str[0]
+panel_full['author'] = panel_full['openrouter_id_uncleaned'].str.split('/').str[0]
 
 y_reg = panel_full['log_adj_price'].values
 log_params_reg = panel_full['log_params'].values
 n_obs = len(y_reg)
 
 # Weight each observation by 1 / (number of observations for its model)
-obs_counts = panel_full.groupby('openrouter_id')['log_adj_price'].transform('count')
+obs_counts = panel_full.groupby('openrouter_id_uncleaned')['log_adj_price'].transform('count')
 weights = (1.0 / obs_counts).values
-cluster_ids = panel_full['openrouter_id'].values
+cluster_ids = panel_full['openrouter_id_uncleaned'].values
 
 week_dummies = pd.get_dummies(panel_full['week'], drop_first=True).astype(float).values
 author_dummies = pd.get_dummies(panel_full['author'], drop_first=True).astype(float).values

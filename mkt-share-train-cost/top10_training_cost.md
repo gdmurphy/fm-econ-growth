@@ -20,16 +20,16 @@ Parameters and Training Dataset Size are shown where available.
 
 ## AI Company Market Share by Survey Source
 
-| Company | Menlo Ventures Survey (Nov 2025) | Demirer et al. OpenRouter tokens (Dec 2025) | Ramp AI Index normalized (Jan 2026) | a16z CIO Survey LLM spend (Jan 2026) | Artificial Analysis normalized (H1 2025) |
-|---------|----------------------------------|---------------------------------------------|-------------------------------------|--------------------------------------|------------------------------------------|
-| Anthropic | 40% | 4.84% | 37.3% | 17% | 14.3% |
-| OpenAI | 27% | 7.37% | 52.5% | 56% | 17.9% |
-| Google | 21% | 25.76% | 7.18% | 16% | 17.1% |
-| Meta | 8% | — | — | 5% | 9.0% |
-| xAI | — | 32.22% | 2.9% | — | 6.6% |
-| DeepSeek | — | — | 0.2% | — | 11.3% |
+| Company | Menlo Ventures Survey (Nov 2025) | OpenRouter 2025 revenues | Ramp AI Index normalized (Jan 2026) | Ramp spend share (2026Q1) | a16z CIO Survey LLM spend (Jan 2026) | Artificial Analysis normalized (H1 2025) | CBA API Spend (Jun–Nov 2025) | Revenue 2025 Est. (USD) |
+|---------|----------------------------------|--------------------------|-------------------------------------|---------------------------|--------------------------------------|------------------------------------------|------------------------------|-------------------------|
+| Anthropic | 40% | 65.8% | 37.3% | 52.2% | 17% | 14.3% | $548,000 | $3.0B |
+| OpenAI | 27% | 10.3% | 52.5% | 46.8% | 56% | 17.9% | $1,165,000 | $14.0B |
+| Google | 21% | 13.8% | 7.18% | — | 16% | 17.1% | — | — |
+| Meta | 8% | — | — | — | 5% | 9.0% | — | — |
+| xAI | — | 5.0% | 2.9% | 0.9% | — | 6.6% | — | — |
+| DeepSeek | — | 1.6% | 0.2% | — | — | 11.3% | — | — |
 
-*Sources: Menlo Ventures Survey; Demirer et al. OpenRouter token-based data; Ramp AI Index (shares normalized from summed adoption across reported companies); Andreessen Horowitz CIO Survey (LLM spend); Artificial Analysis inference API survey (adoption rates normalized to sum to 100% across all reported providers).*
+*Sources: Menlo Ventures Survey; OpenRouter revenue data collected from OpenRouter and filtered to 2025; Ramp AI Index (shares normalized from summed adoption across reported companies); Ramp spend share (2026Q1) normalized to Anthropic, OpenAI, and xAI only (OpenRouter is 0.005% of generative AI spending in this data source); Andreessen Horowitz CIO Survey (LLM spend); Artificial Analysis inference API survey (adoption rates normalized to sum to 100% across all reported providers); CBA API spending data compiled June–November 2025 (OpenRouter accounts for $207,000 of spend over this period); WSJ revenue estimates (`revenue_totals_by_year_estimated_v3.csv`).*
 
 ## Ramp AI Index: Normalized Market Share Over Time
 

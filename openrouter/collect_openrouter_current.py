@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import time
 
-from openrouter.set_globals import *
+from set_globals import *
 
 snapshot_folder = openrouter_api_dir
 model_endpoints_folder = openrouter_api_dir / 'model_endpoints'

@@ -5,29 +5,32 @@ from set_globals import *
 df = pd.read_parquet(data_dir / 'openrouter_panel.parquet')
 df['year'] = df['date'].dt.year
 
-# De-overlap rolling 7-day token windows.
+# De-overlap rolling 7-day token windows. Group on uncleaned (raw) ID so each price-point's
+# token stream is de-overlapped independently — different raw IDs that collapse to the same
+# clean ID generally represent distinct flows (e.g. dated snapshot vs canonical alias).
 # Each snapshot S(D) covers [D-7, D-1]. Weight = min(gap_to_prev, 7) / 7.
-# First observation per model gets weight 1.0 (full window attributed, no prior to compare).
-# Gaps > 7 days: windows are disjoint, cap at 7 → weight 1.0.
+# First observation per raw ID gets weight 1.0; gaps > 7 days cap at 7 → weight 1.0.
 _obs = (
     df[df['total_prompt_tokens'].notna()]
-    .sort_values(['openrouter_id', 'date'])[['openrouter_id', 'date']]
+    .sort_values(['openrouter_id_uncleaned', 'date'])[['openrouter_id_uncleaned', 'date']]
     .copy()
 )
-_obs['_prev_date'] = _obs.groupby('openrouter_id')['date'].shift(1)
+_obs['_prev_date'] = _obs.groupby('openrouter_id_uncleaned')['date'].shift(1)
 _obs['deoverlap_weight'] = (
     (_obs['date'] - _obs['_prev_date'])
     .dt.days.fillna(7).clip(upper=7).div(7.0)
 )
-df = df.merge(_obs[['openrouter_id', 'date', 'deoverlap_weight']], on=['openrouter_id', 'date'], how='left')
+df = df.merge(_obs[['openrouter_id_uncleaned', 'date', 'deoverlap_weight']], on=['openrouter_id_uncleaned', 'date'], how='left')
 df['attributed_prompt_tokens'] = df['total_prompt_tokens'] * df['deoverlap_weight']
 df['attributed_completion_tokens'] = df['total_completion_tokens'] * df['deoverlap_weight']
 df['attributed_reasoning_tokens'] = df['total_native_tokens_reasoning'] * df['deoverlap_weight']
 
-# Forward-fill prices within each model so every attributed-token row has a price
-df = df.sort_values(['openrouter_id', 'date'])
-df['prompt_price_ffill'] = df.groupby('openrouter_id')['prompt_price'].ffill()
-df['completion_price_ffill'] = df.groupby('openrouter_id')['completion_price'].ffill()
+# Forward-fill prices within each raw ID so every attributed-token row pairs with the price
+# that was actually observed for THAT price point — not a price ffilled across raw IDs that
+# happen to share a clean form.
+df = df.sort_values(['openrouter_id_uncleaned', 'date'])
+df['prompt_price_ffill'] = df.groupby('openrouter_id_uncleaned')['prompt_price'].ffill()
+df['completion_price_ffill'] = df.groupby('openrouter_id_uncleaned')['completion_price'].ffill()
 df['prompt_revenue'] = df['attributed_prompt_tokens'] * df['prompt_price_ffill']
 df['completion_revenue'] = df['attributed_completion_tokens'] * df['completion_price_ffill']
 df['attributed_revenue'] = df['prompt_revenue'].fillna(0) + df['completion_revenue'].fillna(0)
@@ -41,7 +44,7 @@ plots_dir.mkdir(exist_ok=True)
 OPENROUTER_NA_SHARE = 0.003
 OPENROUTER_NA_SHARE_SUP = 0.0106
 
-price_cols = ['prompt_price', 'completion_price', 'internal_reasoning_price']
+price_cols = ['prompt_price', 'completion_price']
 cols = [
     'revenue',
     'attributed_prompt_tokens',
@@ -51,7 +54,6 @@ cols = [
     'attributed_reasoning_tokens',
     'prompt_price',
     'completion_price',
-    'internal_reasoning_price',
 ]
 int_cols = [c for c in cols if c not in price_cols]
 
@@ -61,23 +63,24 @@ pd.set_option('display.float_format', '{:.6f}'.format)
 
 
 def calc_total_revenue(data):
-    m = (
-        data.groupby('openrouter_id')[['attributed_prompt_tokens', 'attributed_completion_tokens']]
-        .sum()
-        .join(data.groupby('openrouter_id')[['prompt_price', 'completion_price']].last())
-    )
-    m['revenue'] = m['attributed_prompt_tokens'] * m['prompt_price'] + m['attributed_completion_tokens'] * m['completion_price']
-    return m['revenue'].sum()
+    # Per-row revenue (token × ffilled per-row price) is already computed in `attributed_revenue`,
+    # so prices that change over time within a model are properly attributed to the tokens used at that price.
+    return data['attributed_revenue'].sum()
 
 
 def build_top10(data):
+    # Sum per-row revenue (already token × ffilled per-row price) so price changes within a model
+    # are attributed to the tokens used at that price. Display prices are quantity-weighted averages
+    # (revenue / tokens), consistent with how revenue is computed.
     t = (
-        data.groupby('openrouter_id')[['attributed_prompt_tokens', 'attributed_completion_tokens', 'attributed_reasoning_tokens']]
+        data.groupby('openrouter_id')[['attributed_prompt_tokens', 'attributed_completion_tokens', 'attributed_reasoning_tokens',
+                                       'prompt_revenue', 'completion_revenue']]
         .sum()
-        .join(data.groupby('openrouter_id')[['prompt_price', 'completion_price', 'internal_reasoning_price']].last())
         .reset_index()
     )
-    t['revenue'] = t['attributed_prompt_tokens'] * t['prompt_price'] + t['attributed_completion_tokens'] * t['completion_price']
+    t['revenue'] = t['prompt_revenue'] + t['completion_revenue']
+    t['prompt_price'] = t['prompt_revenue'] / t['attributed_prompt_tokens']
+    t['completion_price'] = t['completion_revenue'] / t['attributed_completion_tokens']
     t['prompt_completion_ratio'] = t['attributed_prompt_tokens'] / t['attributed_completion_tokens']
     t['prompt_completion_reasoning_ratio'] = t['attributed_prompt_tokens'] / (t['attributed_completion_tokens'] + t['attributed_reasoning_tokens'])
     t = t.sort_values('revenue', ascending=False).head(10).reset_index(drop=True)
@@ -87,13 +90,14 @@ def build_top10(data):
 
 
 def build_pie(data, title, filename, total_revenue):
-    m = (
-        data.groupby('openrouter_id')[['attributed_prompt_tokens', 'attributed_completion_tokens']]
+    # Sum per-row revenue (token × ffilled per-row price) by author so within-model price changes
+    # are attributed correctly.
+    author_rev = (
+        data.groupby('openrouter_author')[['prompt_revenue', 'completion_revenue']]
         .sum()
-        .join(data.groupby('openrouter_id')[['prompt_price', 'completion_price', 'openrouter_author']].last())
+        .sum(axis=1)
+        .sort_values(ascending=False)
     )
-    m['revenue'] = m['attributed_prompt_tokens'] * m['prompt_price'] + m['attributed_completion_tokens'] * m['completion_price']
-    author_rev = m.groupby('openrouter_author')['revenue'].sum().sort_values(ascending=False)
     top = author_rev[author_rev / author_rev.sum() >= 0.01]
     other = author_rev[author_rev / author_rev.sum() < 0.01].sum()
     pie_data = pd.concat([top, pd.Series({'other': other})])
@@ -271,6 +275,8 @@ OPENAI_SUBS            = 35e6
 OPENAI_PREMIUM_SHARE   = 0.058
 OPENAI_PREMIUM_PRICE   = 200   # $/month
 OPENAI_STANDARD_PRICE  = 20    # $/month
+OPENAI_SUBS_SOURCE = 'https://tech.yahoo.com/ai/chatgpt/articles/openai-projected-least-220-million-012027742.html'
+OPENAI_PREMIUM_SHARE_SOURCE = 'https://www.consumeredge.com/resources/all-posts/chatgpt-pro-sales-are-off-to-a-strong-start-in-2025/'
 
 ramp = pd.read_csv(data_dir / 'ramp_market_share_normalized.csv', parse_dates=['Date'])
 openai_share_jul2025 = ramp.loc[ramp['Date'] == '2025-07-01', 'OpenAI'].values[0] / 100.0
@@ -320,33 +326,44 @@ Monthly NA revenue = total OpenRouter revenue × NA regional share.
 Annualized market = (monthly NA revenue / assumed OpenRouter NA share) × 12.
 Two scenarios: {OPENROUTER_NA_SHARE:.1%} (base) and {OPENROUTER_NA_SHARE_SUP:.2%} (upper bound).
 Subscription anchor: ${global_sub_rev_annual_jul2025/1e9:.1f}B global annualized revenue in July 2025,
-derived from OpenAI ({OPENAI_SUBS/1e6:.0f}M subs, {OPENAI_PREMIUM_SHARE:.1%} at ${OPENAI_PREMIUM_PRICE}/mo)
+derived from OpenAI ([{OPENAI_SUBS/1e6:.0f}M paid subs]({OPENAI_SUBS_SOURCE}), [{OPENAI_PREMIUM_SHARE:.1%} ChatGPT Pro B2C sales share]({OPENAI_PREMIUM_SHARE_SOURCE}) at ${OPENAI_PREMIUM_PRICE}/mo)
 at {openai_share_jul2025:.1%} market share, scaled by OpenRouter revenue growth and NA regional share.
 
 ![Implied NA AI Market](plots/implied_na_market.png)
 """
 
 # --- Model-level market share CSV ---
-model_stats = df.groupby(['openrouter_id', 'openrouter_author']).agg(
-    attributed_prompt_tokens=('attributed_prompt_tokens', 'sum'),
-    attributed_completion_tokens=('attributed_completion_tokens', 'sum'),
-    prompt_revenue=('prompt_revenue', 'sum'),
-    completion_revenue=('completion_revenue', 'sum'),
-).reset_index()
-model_stats['revenue'] = model_stats['prompt_revenue'] + model_stats['completion_revenue']
-model_stats['market_share'] = model_stats['revenue'] / model_stats['revenue'].sum()
-model_stats['prompt_price_qwavg'] = model_stats['prompt_revenue'] / model_stats['attributed_prompt_tokens']
-model_stats['completion_price_qwavg'] = model_stats['completion_revenue'] / model_stats['attributed_completion_tokens']
-model_stats['prompt_completion_ratio'] = model_stats['attributed_prompt_tokens'] / model_stats['attributed_completion_tokens']
-model_stats = model_stats.sort_values('market_share', ascending=False).reset_index(drop=True)
-model_csv = model_stats[[
+def build_model_stats(data):
+    s = data.groupby(['openrouter_id', 'openrouter_author']).agg(
+        attributed_prompt_tokens=('attributed_prompt_tokens', 'sum'),
+        attributed_completion_tokens=('attributed_completion_tokens', 'sum'),
+        prompt_revenue=('prompt_revenue', 'sum'),
+        completion_revenue=('completion_revenue', 'sum'),
+    ).reset_index()
+    s['revenue'] = s['prompt_revenue'] + s['completion_revenue']
+    s = s[s['revenue'] > 0].copy()
+    s['market_share'] = s['revenue'] / s['revenue'].sum()
+    s['prompt_price_qwavg'] = s['prompt_revenue'] / s['attributed_prompt_tokens']
+    s['completion_price_qwavg'] = s['completion_revenue'] / s['attributed_completion_tokens']
+    s['prompt_completion_ratio'] = s['attributed_prompt_tokens'] / s['attributed_completion_tokens']
+    return s.sort_values('market_share', ascending=False).reset_index(drop=True)
+
+model_stats = build_model_stats(df)
+model_csv_cols = [
     'openrouter_id', 'openrouter_author', 'market_share',
     'attributed_prompt_tokens', 'attributed_completion_tokens', 'prompt_completion_ratio',
     'prompt_price_qwavg', 'completion_price_qwavg', 'revenue',
-]]
+]
+model_csv = model_stats[model_csv_cols]
 model_csv_path = output_dir / 'openrouter_model_market_share.csv'
 model_csv.to_csv(model_csv_path, index=False)
 print(f'Saved model market share to {model_csv_path}')
+
+# 2025-only model-level market share CSV
+model_stats_2025 = build_model_stats(df[df['year'] == 2025])
+model_csv_2025_path = output_dir / 'openrouter_model_market_share_2025.csv'
+model_stats_2025[model_csv_cols].to_csv(model_csv_2025_path, index=False)
+print(f'Saved 2025 model market share to {model_csv_2025_path}')
 
 # --- Author-level market share CSV (aggregated from model stats) ---
 author_stats = model_stats.groupby('openrouter_author').agg(
@@ -508,3 +525,48 @@ for half_label, (h_start, h_end) in halves.items():
 md_path = output_dir / 'top10_openrouter_usage.md'
 md_path.write_text(md)
 print(f'\nSaved markdown to {md_path}')
+
+# --- Price-change time series: top 4 by change in lowest daily price (clean ID) ---
+# For each clean openrouter_id, collapse same-day raw-ID observations to the LOWEST agg_price
+# (3×prompt + completion) — the cheapest available price for the model family on that date.
+# Rank clean IDs by (max - min) / min of the daily-lowest series and plot the top 4.
+price_obs = df[['openrouter_id', 'date', 'prompt_price', 'completion_price']].dropna(subset=['prompt_price', 'completion_price'])
+price_obs['agg_price'] = 3 * price_obs['prompt_price'] + price_obs['completion_price']
+
+daily_low = (
+    price_obs.groupby(['openrouter_id', 'date'])['agg_price']
+    .min()
+    .reset_index()
+    .sort_values(['openrouter_id', 'date'])
+)
+
+per_id_min = daily_low.groupby('openrouter_id')['agg_price'].min()
+per_id_max = daily_low.groupby('openrouter_id')['agg_price'].max()
+agg_chg = (per_id_max - per_id_min) / per_id_min.replace(0, float('nan'))
+top4 = agg_chg.sort_values(ascending=False).head(4).index.tolist()
+print(f'\nTop 4 by change in lowest daily price: {top4}')
+
+plot_data = daily_low[daily_low['openrouter_id'].isin(top4)]
+
+fig, axes = plt.subplots(2, 2, figsize=(14, 9))
+colors = plt.cm.tab10.colors
+
+for i, (model_id, ax) in enumerate(zip(top4, axes.flat)):
+    sub = (
+        plot_data[plot_data['openrouter_id'] == model_id]
+        .set_index('date')
+        .sort_index()
+    )
+    ax.plot(sub.index, sub['agg_price'], color=colors[i], marker='o', markersize=2)
+    ax.set_title(model_id.split('/')[-1], fontsize=10)
+    ax.set_ylabel('Lowest 3×prompt + completion (USD/token)')
+    ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda v, _: f'${v:.2e}'))
+    ax.tick_params(axis='x', rotation=30, labelsize=8)
+    ax.grid(axis='y', alpha=0.3)
+
+fig.suptitle('Lowest Daily Price Over Time — Top 4 by (max−min)/min spread', fontsize=11)
+plt.tight_layout()
+price_chg_path = plots_dir / 'price_change_top4.png'
+fig.savefig(price_chg_path, dpi=150)
+plt.close(fig)
+print(f'Saved chart to {price_chg_path}')

@@ -112,6 +112,21 @@ def build_menlo_series(dates):
     return pd.DataFrame(records).set_index("Date")
 
 
+def load_revenue_data(filepath):
+    """Return DataFrame with annual revenue estimates, with a Date column (Jan 1 of each year)."""
+    df = pd.read_csv(filepath)
+    df["Date"] = pd.to_datetime(df["year"].astype(str) + "-01-01")
+    return df
+
+
+def load_ramp_spend_shares(filepath, quarter, companies):
+    """Return normalized spend shares (%) for given companies in a single quarter."""
+    df = pd.read_csv(filepath, index_col=0)
+    vals = {co: float(df.loc[co, quarter]) for co in companies if co in df.index}
+    total = sum(vals.values())
+    return {co: v / total * 100 for co, v in vals.items()}
+
+
 # ---------------------------------------------------------------------------
 # Plotting: Ramp normalized market share time series
 # ---------------------------------------------------------------------------
@@ -273,7 +288,11 @@ top10 = sorted(filtered, key=lambda x: x["cost"], reverse=True)[:10]
 # ---------------------------------------------------------------------------
 
 ramp_shares = load_ramp_market_shares("data/ramp-data-Dq5pU.csv")
+ramp_spend_2026q1 = load_ramp_spend_shares(
+    "ramp-api/ramp-spend-shares-web.csv", "2026Q1", ["Anthropic", "OpenAI", "xAI"]
+)
 menlo_series = build_menlo_series(ramp_shares["Date"])
+revenue_df = load_revenue_data("data/wsj_ai_revenue_data/revenue_totals_by_year_estimated_v3.csv")
 model_events = find_model_events("data/openrouter_panel.parquet")
 plot_ramp_market_shares(ramp_shares, menlo_series, "mkt-share-train-cost/ramp_market_share.png", model_events=model_events)
 
@@ -321,37 +340,64 @@ def aa_share(company):
     v = _aa_normalized.get(company)
     return f"{v:.1f}%" if v is not None else None
 
+
+def ramp_spend_share(company):
+    """Return formatted Ramp 2026Q1 spend share normalized to Anthropic/OpenAI/xAI, or None."""
+    v = ramp_spend_2026q1.get(company)
+    return f"{v:.1f}%" if v is not None else None
+
+# Revenue snapshot for market share table (most recent complete year: 2025)
+def _fmt_rev(df, year, col):
+    row = df[df["year"] == year]
+    if row.empty:
+        return None
+    val = row[col].values[0]
+    return f"${val:.1f}B" if not pd.isna(val) else None
+
+_rev_openai_2025 = _fmt_rev(revenue_df, 2025, "openai_total_revenue_usd_billions_est")
+_rev_anthropic_2025 = _fmt_rev(revenue_df, 2025, "anthropic_total_revenue_usd_billions_est")
+
+# CBA API spending data, compiled June–November 2025
+CBA_API_SPEND = {
+    "OpenAI":    "$1,165,000",
+    "Anthropic": "$548,000",
+}
+
 # Market share snapshot table
-# (Company, Menlo Ventures, Demirer et al. OpenRouter, Ramp AI Index, a16z CIO Survey, Artificial Analysis)
+# (Company, Menlo Ventures, OpenRouter revenues, Ramp AI Index, Ramp spend 2026Q1, a16z CIO Survey, Artificial Analysis, CBA API Spend, Revenue 2025)
 market_share = [
-    ("Anthropic", "40%",   "4.84%",  "37.3%", "17%"),
-    ("OpenAI",    "27%",   "7.37%",  "52.5%", "56%"),
-    ("Google",    "21%",   "25.76%", "7.18%", "16%"),
-    ("Meta",      "8%",    None,     None,    "5%"),
-    ("xAI",       None,    "32.22%", "2.9%",  None),
-    ("DeepSeek",  None,    None,     "0.2%",  None),
+    ("Anthropic", "40%",   "65.8%", "37.3%", "17%", CBA_API_SPEND.get("Anthropic"), _rev_anthropic_2025),
+    ("OpenAI",    "27%",   "10.3%", "52.5%", "56%", CBA_API_SPEND.get("OpenAI"),    _rev_openai_2025),
+    ("Google",    "21%",   "13.8%", "7.18%", "16%", None, None),
+    ("Meta",      "8%",    None,    None,    "5%",   None, None),
+    ("xAI",       None,    "5.0%",  "2.9%",  None,   None, None),
+    ("DeepSeek",  None,    "1.6%",  "0.2%",  None,   None, None),
 ]
 
 lines += [
     "",
     "## AI Company Market Share by Survey Source",
     "",
-    "| Company | Menlo Ventures Survey (Nov 2025) | Demirer et al. OpenRouter tokens (Dec 2025) | Ramp AI Index normalized (Jan 2026) | a16z CIO Survey LLM spend (Jan 2026) | Artificial Analysis normalized (H1 2025) |",
-    "|---------|----------------------------------|---------------------------------------------|-------------------------------------|--------------------------------------|------------------------------------------|",
+    "| Company | Menlo Ventures Survey (Nov 2025) | OpenRouter 2025 revenues | Ramp AI Index normalized (Jan 2026) | Ramp spend share (2026Q1) | a16z CIO Survey LLM spend (Jan 2026) | Artificial Analysis normalized (H1 2025) | CBA API Spend (Jun–Nov 2025) | Revenue 2025 Est. (USD) |",
+    "|---------|----------------------------------|--------------------------|-------------------------------------|---------------------------|--------------------------------------|------------------------------------------|------------------------------|-------------------------|",
 ]
 
-for company, menlo, openrouter, ramp, a16z in market_share:
+for company, menlo, openrouter, ramp, a16z, cba_spend, revenue in market_share:
     lines.append(
         f"| {company} | {fmt_share(menlo)} | {fmt_share(openrouter)} | {fmt_share(ramp)} "
-        f"| {fmt_share(a16z)} | {fmt_share(aa_share(company))} |"
+        f"| {fmt_share(ramp_spend_share(company))} | {fmt_share(a16z)} "
+        f"| {fmt_share(aa_share(company))} | {fmt_share(cba_spend)} | {fmt_share(revenue)} |"
     )
 
 lines += [
     "",
-    "*Sources: Menlo Ventures Survey; Demirer et al. OpenRouter token-based data; "
+    "*Sources: Menlo Ventures Survey; OpenRouter revenue data collected from OpenRouter and filtered to 2025; "
     "Ramp AI Index (shares normalized from summed adoption across reported companies); "
+    "Ramp spend share (2026Q1) normalized to Anthropic, OpenAI, and xAI only (OpenRouter is 0.005% of generative AI spending in this data source); "
     "Andreessen Horowitz CIO Survey (LLM spend); "
-    "Artificial Analysis inference API survey (adoption rates normalized to sum to 100% across all reported providers).*",
+    "Artificial Analysis inference API survey (adoption rates normalized to sum to 100% across all reported providers); "
+    "CBA API spending data compiled June–November 2025 (OpenRouter accounts for $207,000 of spend over this period); "
+    "WSJ revenue estimates (`revenue_totals_by_year_estimated_v3.csv`).*",
 ]
 
 # Ramp time series section
@@ -417,14 +463,17 @@ for year in [2023, 2024, 2025]:
 
 # Market share snapshot
 market_share_rows = []
-for company, menlo, openrouter, ramp, a16z in market_share:
+for company, menlo, openrouter, ramp, a16z, cba_spend, revenue in market_share:
     market_share_rows.append({
         "Company": company,
         "Menlo Ventures Survey (Nov 2025)": fmt_share(menlo),
-        "Demirer et al. OpenRouter tokens (Dec 2025)": fmt_share(openrouter),
+        "OpenRouter 2025 revenues": fmt_share(openrouter),
         "Ramp AI Index normalized (Jan 2026)": fmt_share(ramp),
+        "Ramp spend share (2026Q1)": fmt_share(ramp_spend_share(company)),
         "a16z CIO Survey LLM spend (Jan 2026)": fmt_share(a16z),
         "Artificial Analysis normalized (H1 2025)": fmt_share(aa_share(company)),
+        "CBA API Spend (Jun–Nov 2025)": fmt_share(cba_spend),
+        "Revenue 2025 Est. (USD)": fmt_share(revenue),
     })
 pd.DataFrame(market_share_rows).to_csv("data/market_share_snapshot.csv", index=False)
 print("Wrote data/market_share_snapshot.csv")

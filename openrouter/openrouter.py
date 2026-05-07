@@ -5,7 +5,7 @@ import re
 import json
 import json_repair
 
-from openrouter.set_globals import *
+from set_globals import *
 
 snapshot_folder = raw_data_dir / 'openrouter_snapshots'
 wayback_folder = snapshot_folder / 'wayback'
@@ -181,11 +181,34 @@ for snapshot_path in snapshot_paths:
             model_list.append(model_data)
 
 df_model = pd.DataFrame(model_list)
+
+# Two cleaning levels:
+#  - _strip_date: strips trailing all-digit date suffixes only; preserves :variant. Used to
+#    derive the public-facing `openrouter_id` (clean form, with variant intact).
+#  - _hf_match_key: aggressive strip (date + variant). Internal use only — broadcasts a single
+#    huggingface_id across rows whose IDs differ only by date/variant.
+# Longest date patterns listed first so e.g. "...-2024-11-20" strips fully rather than matching
+# the shorter "-11-20" tail.
+date_suffix_re = re.compile(r'-(\d{4}-\d{2}-\d{2}|\d{2}-\d{4}|\d{2}-\d{2}|\d{8}|\d{6}|\d{4})$')
+
+def _strip_date(x):
+    base, sep, variant = x.partition(':')
+    return date_suffix_re.sub('', base) + (sep + variant if sep else '')
+
+def _hf_match_key(x):
+    return date_suffix_re.sub('', x.split(':', 1)[0])
+
+# Keep raw IDs as the row-level key so raw IDs that share a clean form but list different
+# prices stay as separate rows (revenue downstream multiplies the actual price by the actual
+# tokens for that price point).
+df_model = df_model.rename(columns = {'openrouter_id': 'openrouter_id_uncleaned'})
+
 price_cols = [c for c in df_model.columns if c.endswith('_price')]
 for c in price_cols:
     df_model[c] = pd.to_numeric(df_model[c], errors = 'coerce')
     df_model.loc[df_model[c] < 0, c] = np.nan
 df_usage = pd.DataFrame(usage_list)
+df_usage = df_usage.rename(columns = {'openrouter_id': 'openrouter_id_uncleaned'})
 df_usage = df_usage.drop(columns = 'date') # Unclear what exactly this is, just use the actual snapshot date for now
 df_usage['total_tokens'] = df_usage['total_prompt_tokens'] + df_usage['total_completion_tokens']
 
@@ -196,42 +219,47 @@ df_usage = df_usage.drop(columns = 'datetime')
 
 df = pd.merge(left = df_model,
               right = df_usage,
-              on = ['openrouter_id', 'date'],
+              on = ['openrouter_id_uncleaned', 'date'],
               how = 'outer')
 
 agg_dict = {}
 for c in df.columns:
-    if c == 'openrouter_id' or c == 'date':
+    if c in ('openrouter_id_uncleaned', 'date'):
         continue
 
     agg_dict[c] = 'first'
     try:
         df[c] = pd.to_numeric(df[c])
-        agg_dict[c] = 'max'
+        # Prices: take the cheapest endpoint observed when multiple snapshots collide on the
+        # same (raw_id, date). Token counts and other numeric columns: take max (cumulative
+        # reports — the highest observation reflects the most-complete snapshot).
+        agg_dict[c] = 'min' if c.endswith('_price') else 'max'
     except (ValueError, TypeError) as e:
         continue
 
 # There may be multiple snapshots from a single date.
 # I want one observation per model per date.
-# I aggregate some variable with "max" to try to get non-null values
-df = df.groupby(['openrouter_id', 'date']).agg(agg_dict).reset_index()
-                                               
+df = df.groupby(['openrouter_id_uncleaned', 'date']).agg(agg_dict).reset_index()
+
 # Create panel structure
-model_dates = df.groupby('openrouter_id')['date'].apply(lambda g: pd.date_range(g.min(), g.max(), freq = 'D')).reset_index().explode('date')
+model_dates = df.groupby('openrouter_id_uncleaned')['date'].apply(lambda g: pd.date_range(g.min(), g.max(), freq = 'D')).reset_index().explode('date')
 
 df = pd.merge(left = model_dates,
               right = df,
               how = 'left',
-              on = ['openrouter_id', 'date'])
+              on = ['openrouter_id_uncleaned', 'date'])
 
-df = df.sort_values(by = ['openrouter_id', 'date']).reset_index(drop = True)
+df = df.sort_values(by = ['openrouter_id_uncleaned', 'date']).reset_index(drop = True)
 
-df['variant'] = df['openrouter_id'].apply(lambda x: x.split(':', 1)[1] if ':' in x else None)
+# Cleaned ID: date suffix stripped, :variant preserved. Annotation column for downstream
+# market-share consolidation; multiple uncleaned rows can share one cleaned value.
+df['openrouter_id'] = df['openrouter_id_uncleaned'].apply(_strip_date)
 
-# Improve matching of openrouter IDs to hugging face IDs
-# by cleaning some openrouter IDs and then assigning the same hugging face ID to all identical values of openrouter_id_clean
-df['openrouter_id_clean'] = df['openrouter_id'].apply(lambda x: re.sub(r'-\d{8}$', '', x.split(':', 1)[0]))
-df['huggingface_id'] = df.groupby('openrouter_id_clean')['huggingface_id'].transform('first')
+# Broadcast huggingface_id across all rows whose IDs differ only by date/variant. The key
+# is computed inline (not persisted) — variants share an underlying HF model, so :thinking
+# and :beta inherit the same hf_slug as the bare model.
+hf_key = df['openrouter_id_uncleaned'].apply(_hf_match_key)
+df['huggingface_id'] = df.groupby(hf_key)['huggingface_id'].transform('first')
 
 df['huggingface_author'] = df['huggingface_id'].str.split('/').str[-2]
 df['huggingface_model_name'] = df['huggingface_id'].str.split('/').str[-1]
